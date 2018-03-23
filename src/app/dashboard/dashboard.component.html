@@ -1,9 +1,28 @@
 <!--Main Navigation-->
-<header>
+<header id="top">
 
-
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar intro-fixed-nav" [containerInside]="false">
+        <logo>
+            <a class="logo navbar-brand" href="#"><strong>Qumi Soft Jakub Kumięga</strong></a>
+        </logo>
+        <links>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active waves-light" mdbRippleRadius>
+                    <a class="nav-link" href="#top" mdbPageScroll [pageScrollDuration]="1000">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item waves-light" mdbRippleRadius>
+                    <a class="nav-link" href="#about" mdbPageScroll [pageScrollDuration]="1000">O nas</a>
+                </li>
+                <li class="nav-item waves-light" mdbRippleRadius>
+                    <a class="nav-link" href="#contact" mdbPageScroll [pageScrollDuration]="1000">Kontakt</a>
+                </li>
+            </ul>
+        </links>
+    </mdb-navbar>
+    <!-- Main -->
+   
     <!--Intro Section-->
-    <section class="view intro-2 hm-gradient">
+    <section class="view hm-gradient">
         <div class="full-bg-img">
                 <div class="container flex-center">
                     <div class="row smooth-scroll">
