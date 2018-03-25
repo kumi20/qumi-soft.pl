@@ -14,11 +14,15 @@ import { EventService } from './event.service';
 import { routerModule} from './app.routing';
 
 import { DashboardComponent} from './dashboard/dashboard.component';
+import { DynamicComponentComponent } from './dynamic-component/dynamic-component.component';
+import { WraperComponentComponent } from './wraper-component/wraper-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    DynamicComponentComponent,
+    WraperComponentComponent
   ],
   imports: [
     BrowserModule,
