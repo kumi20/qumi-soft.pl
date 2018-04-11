@@ -16,13 +16,14 @@ import { routerModule} from './app.routing';
 import { DashboardComponent} from './dashboard/dashboard.component';
 import { DynamicComponentComponent } from './dynamic-component/dynamic-component.component';
 import { WraperComponentComponent } from './wraper-component/wraper-component.component';
+import { TemplateModule } from './template/template.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     DynamicComponentComponent,
-    WraperComponentComponent
+    WraperComponentComponent,    
   ],
   imports: [
     BrowserModule,
@@ -31,6 +32,7 @@ import { WraperComponentComponent } from './wraper-component/wraper-component.co
     routerModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    TemplateModule,
     MDBBootstrapModule.forRoot(),
     MDBBootstrapModulePro.forRoot()
   ],

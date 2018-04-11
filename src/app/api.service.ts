@@ -8,6 +8,7 @@ import 'rxjs/add/operator/toPromise';
 export class ApiService {
 
   uri = 'http://kumi20.webd.pl/api/cms/';
+  //uri = 'http://127.0.0.1/CMS/src/api/'; //api testowe
  
   headers:Headers = new Headers;    
 
@@ -17,6 +18,17 @@ export class ApiService {
       this.headers.append("Content-Type", "application/json");
   }
 
+  get(uri){
+    return this._http.get(this.uri+uri).map(
+        response => response.json()
+    )
+  }
+
+  post(uri, json){
+      return this._http.post(this.uri+uri,json).map(
+          response => response.json()
+      )
+  }
 
 }
 

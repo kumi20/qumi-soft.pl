@@ -1,3 +1,4 @@
-<p>
-  wraper-component works!
-</p>
+
+<div *ngFor="let komp of kontrolkiDoWyswietlenia;">
+    <app-dynamic-component [componentData]="komp" [idTresci]="komp.idTresci" [pageElement]="komp.pageElement" #dynamic></app-dynamic-component>
+</div>

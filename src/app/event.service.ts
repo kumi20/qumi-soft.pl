@@ -16,4 +16,12 @@ export class EventService {
         case 'error': this.toastrService.error(tresc); break;
     }
   }
+
+  klepsydraStart(){
+    document.getElementById('klepsydra').style.display = 'block';
+}
+
+  klepsydraStop(){
+      document.getElementById('klepsydra').style.display = 'none';
+  }
 }
