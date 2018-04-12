@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('landing-page App', () => {
+describe('strona App', () => {
   let page: AppPage;
 
   beforeEach(() => {

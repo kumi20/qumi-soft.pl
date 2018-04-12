@@ -5,7 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 // ROUTING
 const routesConfig: Routes = [
     { path: '', component: DashboardComponent},
-    
+    { path: ':id', component: DashboardComponent}
   ]
 
 export const routerModule = RouterModule.forRoot(routesConfig, {

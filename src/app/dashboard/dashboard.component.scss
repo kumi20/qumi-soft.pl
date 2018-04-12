@@ -1,12 +1,13 @@
 .view {
     background: url(../../assets/img/header.jpg)no-repeat center center;
     background-size: cover;
+    width: 100%vw;
+    height: 100vh;
 }
 .view.hm-indigo-slight {
     position: absolute;
     top: 0;
-    width: 100%;
-    height: 100%;
+    
 }
 
 

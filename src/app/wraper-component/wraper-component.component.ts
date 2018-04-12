@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, ViewChild, Output, EventEmitter} from '@angular/core';
 import { ApiService } from '../api.service';
 import { EventService } from '../event.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -30,12 +30,22 @@ export class WraperComponentComponent implements OnInit {
 
   constructor(private ref: ElementRef, private CmsService: ApiService, private event: EventService, private route: ActivatedRoute, private _route: Router) { }
 
-  ngOnInit() {
-    this.pobierzKontrolki();
+  ngOnInit() {  
+      this.route.params.subscribe(params => this.idPage = parseInt(params['id']));
+      if (isNaN(this.idPage)) this.idPage = 1;
+      
+      if(this.idPage != 1){
+          this.pobierzKontrolki(this.idPage);
+      }
+      else{
+          this.pobierzKontrolki();
+      }
   }
 
-  pobierzKontrolki(){
+  pobierzKontrolki(idPage?){
         this.event.klepsydraStart();
+        if(idPage) this.idPage = idPage; 
+        
         const json = JSON.stringify({
             'idContainer': this.idKontenera,
             'idPage': this.idPage

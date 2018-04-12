@@ -20,7 +20,7 @@
         </links>
     </mdb-navbar>
     <!-- Main -->
-   
+
     <!--Intro Section-->
     <section class="view hm-gradient">
         <div class="full-bg-img">
@@ -36,6 +36,7 @@
                 </div>
             </div>
     </section>
+
 
 </header>
 <!--Main Navigation-->
@@ -68,7 +69,7 @@
                         </h3>
 
                         <!-- Description -->
-                        <p align="justify" class="grey-text"><app-wraper-component [idKontenera]="24" [idPage]="1"></app-wraper-component></p>
+                        <p align="justify" class="grey-text"><app-wraper-component [idKontenera]="24" [idPage]="id" #dynamiCom></app-wraper-component></p>
 
                     </div>
                     <!-- Grid column -->
@@ -76,13 +77,12 @@
                 </div>
                 <!-- Grid row -->
 
-            </section>
+            </section>    
             <!-- Section: About -->
         
         
          <!-- Section: Features v.4 -->
             <section id="features" class="section feature-box mb-5 pb-4">
-
                 <!-- Section heading -->
                 <h3 class="text-center title my-5 pt-5 pb-4 dark-grey-text font-weight-bold wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
                     <strong>Awesome features</strong>
@@ -99,9 +99,8 @@
                                 <i class="fa fa-edit orange-text fa-2x"></i>
                             </div>
                             <div class="col-10 mb-2">
-                                <h5 class="font-weight-bold title">Modern design</h5>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
-                                    minima.
+                                <h5 class="font-weight-bold title">Nowoczesny design</h5>
+                                <p class="grey-text"><app-wraper-component [idKontenera]="40" [idPage]="id" #dynamiCom></app-wraper-component>
                                 </p>
                             </div>
                         </div>
@@ -113,9 +112,8 @@
                                 <i class="fa fa-cogs orange-text fa-2x"></i>
                             </div>
                             <div class="col-10 mb-2">
-                                <h5 class="font-weight-bold title">Easy customize</h5>
-                                <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
-                                    minima assumenda.</p>
+                                <h5 class="font-weight-bold title">Autorski system CMS</h5>
+                                <p class="grey-text"><app-wraper-component [idKontenera]="41" [idPage]="id" #dynamiCom></app-wraper-component></p>
                             </div>
                         </div>
                         <!-- Grid row -->
@@ -126,7 +124,7 @@
                                 <i class="fa fa-tablet orange-text fa-2x"></i>
                             </div>
                             <div class="col-10 mb-2">
-                                <h5 class="font-weight-bold title">Responsive layouts</h5>
+                                <h5 class="font-weight-bold title">Responsywny layout</h5>
                                 <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam.</p>
                             </div>
                         </div>
@@ -148,7 +146,7 @@
                                 <i class="fa fa-line-chart orange-text fa-2x"></i>
                             </div>
                             <div class="col-10 mb-2">
-                                <h5 class="font-weight-bold title">Optymized for SEO</h5>
+                                <h5 class="font-weight-bold title">Optymalizacja pod SEO</h5>
                                 <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam.</p>
                             </div>
                         </div>
@@ -160,7 +158,7 @@
                                 <i class="fa fa-group orange-text fa-2x"></i>
                             </div>
                             <div class="col-10 mb-2">
-                                <h5 class="font-weight-bold title">Technical support</h5>
+                                <h5 class="font-weight-bold title">Wsparcie techniczne</h5>
                                 <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
                                     minima assumenda.</p>
                             </div>
@@ -173,7 +171,7 @@
                                 <i class="fa fa-diamond orange-text fa-2x"></i>
                             </div>
                             <div class="col-10 mb-2">
-                                <h5 class="font-weight-bold title">High quality</h5>
+                                <h5 class="font-weight-bold title">Wysoka jakość</h5>
                                 <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam
                                     minima.
                                 </p>

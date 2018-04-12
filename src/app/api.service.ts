@@ -9,6 +9,13 @@ export class ApiService {
 
   uri = 'http://kumi20.webd.pl/api/cms/';
   //uri = 'http://127.0.0.1/CMS/src/api/'; //api testowe
+    
+  uriUploudImageGallery = 'http://kumi20.webd.pl/api/cms/gallery/uploudImages.php';
+
+  uriGallery = 'http://kumi20.webd.pl/cms/assets/gallery';
+
+  uriNewsImage = 'http://kumi20.webd.pl/api/plik.php';
+  sourceImageNews = 'http://kumi20.webd.pl/source/';
  
   headers:Headers = new Headers;    
 

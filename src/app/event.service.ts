@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ToastService } from './typescripts/pro'
-
-
+import { ToastService } from './typescripts/pro';
+import { MDBSpinningPreloader } from './typescripts/pro';
 
 @Injectable()
 export class EventService {
