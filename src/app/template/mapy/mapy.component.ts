@@ -15,7 +15,7 @@ export class MapyComponent implements OnInit {
   pageElement;
     
   markerList: any[] = [];
-  public map: any = { lat: 50.25234927320067, lng: 22.42212403297424 };
+  public map: any = { lat: 50.40340273848367, lng: 22.30135560035683 };
     
   constructor(private CmsService: ApiService, private route: ActivatedRoute, private _route: Router, private event: EventService) { }
 

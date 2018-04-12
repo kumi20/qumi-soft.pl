@@ -39,3 +39,16 @@ h6 {
 .logo-img{
     width:80px;
 }
+
+.rgba-blue-strong{
+    position: relative;
+    top:-50px;
+    height:100%;
+}
+
+@media (max-width: 600px){
+    .view h2{
+        font-size:44px;
+    }
+}
+
