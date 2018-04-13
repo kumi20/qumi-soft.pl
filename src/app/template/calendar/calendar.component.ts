@@ -25,7 +25,7 @@ export class CalendarTemplateComponent implements OnInit {
       this.event.klepsydraStart();
       this.CmsService.get(`callendar/getList.php`).subscribe(
         response =>{
-            this.events = response;
+            if (response !=null) this.events = response;
             this.calendarOptions = {
                 editable: false,
                 eventLimit: false,

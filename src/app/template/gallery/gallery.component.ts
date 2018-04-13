@@ -22,17 +22,19 @@ export class GalleryComponent implements OnInit {
       this.event.klepsydraStart();
         this.CmsService.get(`gallery/galleryId_Get.php?idGallery=${this.idtresci}`).subscribe(
           response => {
-            
-            for(let i = 0; i < response.length; i++){
-                this.imagesBasic.push({
-                    'img': this.CmsService.uriGallery+`/${this.idtresci}/`+response[i].gallery_photo_name,
-                    'thumb': this.CmsService.uriGallery+`/${this.idtresci}/thumb/`+response[i].gallery_photo_name,
-                    'description': response[i].description,
-                    'idPhoto': response[i].gallery_photo_id  
-              })
+            if (response !=null){
+                for(let i = 0; i < response.length; i++){
+                    this.imagesBasic.push({
+                        'img': this.CmsService.uriGallery+`/${this.idtresci}/`+response[i].gallery_photo_name,
+                        'thumb': this.CmsService.uriGallery+`/${this.idtresci}/thumb/`+response[i].gallery_photo_name,
+                        'description': response[i].description,
+                        'idPhoto': response[i].gallery_photo_id  
+                  })
 
-             
+
+                }
             }
+            
             this.event.klepsydraStop();
           },
           error =>{
