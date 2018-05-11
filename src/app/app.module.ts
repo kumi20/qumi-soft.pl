@@ -12,18 +12,21 @@ import { AppComponent } from './app.component';
 import { ApiService } from './api.service';
 import { EventService } from './event.service';
 import { routerModule} from './app.routing';
+import { AuthGuard } from './auth.guard';
 
 import { DashboardComponent} from './dashboard/dashboard.component';
 import { DynamicComponentComponent } from './dynamic-component/dynamic-component.component';
 import { WraperComponentComponent } from './wraper-component/wraper-component.component';
 import { TemplateModule } from './template/template.module';
+import { EbookComponent } from './ebook/ebook.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     DynamicComponentComponent,
-    WraperComponentComponent,    
+    WraperComponentComponent,
+    EbookComponent,    
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { TemplateModule } from './template/template.module';
     MDBBootstrapModule.forRoot(),
     MDBBootstrapModulePro.forRoot()
   ],
-  providers: [ApiService, EventService],
+  providers: [ApiService, EventService, AuthGuard],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })

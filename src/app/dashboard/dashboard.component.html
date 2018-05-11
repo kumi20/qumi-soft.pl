@@ -233,7 +233,7 @@
               <div class="row text-center text-md-left mt-3 pb-3">
       
                   <!--First column-->
-                  <div class="col-md-6 col-lg-6 col-xl-9 mx-auto mt-6">
+                  <div class="col-md-5 col-lg-4 col-xl-7 mx-auto mt-6">
                       <h6 class="text-uppercase mb-4 font-weight-bold">Qumi Soft Jakub Kumięga</h6>
                       <p><app-wraper-component [idKontenera]="46" [idPage]="id" #dynamiCom></app-wraper-component></p>
                   </div>
@@ -243,11 +243,48 @@
                   <hr class="w-100 clearfix d-md-none">
       
                   <!--Fourth column-->
-                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <div class="col-md-5 col-lg-5 col-xl-5 mx-auto mt-3">
                       <h6 class="text-uppercase mb-4 font-weight-bold">Kontakt</h6>
                       <p><i class="fa fa-home mr-3"></i> Kopki, ul. Górka 15, PL</p>
                       <p><i class="fa fa-envelope mr-3"></i> j.kumiega@icloud.com</p>
                       <p><i class="fa fa-phone mr-3"></i> + 48 723 080 368</p>
+                      
+                        <br><br>
+                      <div class="card">
+                                   
+
+                            <div class="card-body">
+
+                                <!--Header-->
+                                <div class="form-header deep-blue-gradient rounded">
+                                    <h3><i class="fa fa-lock"></i> Panel klienta:</h3>
+                                </div>
+
+                                <!-- Material input email -->
+                                <div class="md-form font-weight-light">
+                                    <i class="fa fa-envelope prefix grey-text active"></i>
+                                    <input mdbActive type="email" id="materialFormEmailEx" class="form-control" [(ngModel)]="userEmail" style="color:#fff">
+                                    <label for="materialFormEmailEx" class="active">e-mail</label>
+                                </div>
+
+                                <!-- Material input password -->
+                                <div class="md-form font-weight-light">
+                                    <i class="fa fa-lock prefix grey-text active"></i>
+                                    <input mdbActive type="password" id="materialFormPasswordEx" class="form-control" [(ngModel)]="userPsw" style="color:#fff">
+                                    <label for="materialFormPasswordEx" class="active">hasło</label>
+                                </div>
+
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-light-blue waves-effect waves-light" type="submit" (click)="logOn()" [ngClass]="{'disabled': userEmail == '' || userPsw == ''}">Zaloguj</button>
+                                </div>
+                                
+                                <div class="alert alert-danger" *ngIf="errorLogin.length > 0">
+                                    <strong>Błąd!</strong> {{errorLogin}}.
+                                </div>
+
+                            </div>   
+                      </div>              
+                 
                   </div>
                   <!--/.Fourth column-->
       
