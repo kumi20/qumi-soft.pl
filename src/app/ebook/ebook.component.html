@@ -1,0 +1,215 @@
+<header>        
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark black" [containerInside]="true">
+        <logo>
+            <a routerLink="/ebook"><img src="assets/img/logo.png" class="img-fluid flex-center" width="100"></a>
+        </logo>
+        <links>
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <p (click)="logOut()" style="color:#fff; margin-top: 10px; float;right; cursor: pointer"><i class="fa fa-sign-out" aria-hidden="true"></i>Wyloguj</p>
+        </links>
+    </mdb-navbar>
+    <!-- Main -->
+    <div class="view">
+      <div class="full-bg-img">
+          <div class="mask rgba-black-strong flex-center">
+              <div class="container">
+                  <div class="white-text text-center wow fadeInUp">
+                      <h2>This Navbar isn't fixed</h2>
+                      <h5>When you scroll down it will disappear</h5>
+                      <br>
+                      <p>Full page intro with background image will be always displayed in full screen mode, regardless of device </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    <!-- /.Main -->
+  </header>    
+  <!--Main Layout-->
+
+  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <app-profile3 _nghost-c4="">
+            
+                <div _ngcontent-c4="" class="row">
+                    <div _ngcontent-c4="" class="col-md-8">
+
+
+                        <div _ngcontent-c4="" class="card card-cascade narrower">           
+
+                            <ng-template [ngIf]="!eidtData && !isChangePsw">
+                                
+
+                                <div _ngcontent-c4="" class="card-body text-center">
+
+                                   <div class="row">
+                                      <div class="col-md-6">
+                                         <br>
+                                          <div class="md-form">
+                                               <mdb-select class="select" [options]="year" [filterEnabled]="true" placeholder="-- wybierz rok --" [(ngModel)]="actualYear" (selected)="downloadFV()"></mdb-select>
+                                               <label class="active">Rok:</label>
+                                           </div>
+                                      </div>  
+                                   </div>
+
+                                    <div class="row">
+                                       <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width:5%">#</th>
+                                                    <th style="width:10%">Rok</th>
+                                                    <th >Miesiąc</th>
+                                                    <th>Numer faktury</th>
+                                                    <th>Termin płatności</th>
+                                                    <th>Opłacona</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let faktura of faktury; let i = index" [ngClass]="{'colorRed': faktura.data_term < actualDate && faktura.date_pay == null}">
+                                                    <td >{{i+1}}</td>
+                                                    <td>{{faktura.fv_year}}</td>
+                                                    <td>{{faktura.fv_mounth}}</td>    
+                                                    <td><a href="http://kumi20.webd.pl/customersFiles/{{faktura.fv_url}}" target="_blank" >{{faktura.fv_name}}</a></td>
+                                                    <td>{{faktura.data_term}}</td>
+                                                    <td>
+                                                        <p *ngIf="faktura.date_pay != null">Tak</p>
+                                                        <p *ngIf="faktura.date_pay === null">Nie</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                   </div>
+
+                                </div>
+
+                            </ng-template>
+                            
+                            <ng-template [ngIf]="eidtData && !isChangePsw">
+                                 <br><br>
+                                  <div class="container">
+                                        <div class="row">
+                                           <div class="col-md-12">
+                                               <div class="md-form">
+                                                    <input type="text" class="form-control" [(ngModel)]="userData.customer_name">
+                                                    <label class="active">Nazwa:</label>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="row">
+                                           <div class="col-md-4">
+                                               <div class="md-form">
+                                                    <input type="text" class="form-control" [(ngModel)]="userData.customer_post_code">
+                                                    <label class="active">Kod pocztowy:</label>
+                                               </div>
+                                           </div>
+                                           <div class="col-md-8">
+                                               <div class="md-form">
+                                                    <input type="text" class="form-control" [(ngModel)]="userData.customer_city">
+                                                    <label class="active">Miejscowość:</label>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="row">
+                                           <div class="col-md-12">
+                                               <div class="md-form">
+                                                    <input type="text" class="form-control" [(ngModel)]="userData.customer_street">
+                                                    <label class="active">Ulica i nr:</label>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       
+                                       <div class="row">
+                                           <div class="col-md-12">
+                                               <div class="md-form">
+                                                    <input type="text" class="form-control" [(ngModel)]="userData.customer_nip">
+                                                    <label class="active">Nip:</label>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="col-lg-12">
+                                            <button class="btn btn-outline-success waves-effect" (click)="save()">Zapisz</button> 
+                                            <button class="btn btn-outline-primary waves-effect" (click)="cancel()">Anuluj</button> 
+                                       </div> 
+                                  </div> 
+                            </ng-template>
+                            
+                            <ng-template [ngIf]="!eidtData && isChangePsw">
+                                <br><br>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="md-form">
+                                                <input type="password" class="form-control" [(ngModel)]="psw">
+                                                <label class="active">Nowe hasło:</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="md-form">
+                                                <input type="password" class="form-control" [(ngModel)]="psw2">
+                                                <label class="active">Powtórz hasło:</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-12">
+                                            <button class="btn btn-outline-success waves-effect" (click)="savePsw()">Zapisz</button> 
+                                            <button class="btn btn-outline-primary waves-effect" (click)="cancel()">Anuluj</button> 
+                                    </div> 
+                                </div>
+                            </ng-template>
+                        </div>
+
+
+
+
+                    </div>
+                    <div _ngcontent-c4="" class="col-md-4">
+
+
+                        <section _ngcontent-c4="" class="section team-section pb-3">
+
+                            <div _ngcontent-c4="" class="row text-center">
+
+
+                                    <div _ngcontent-c4="" class="col-md-12">
+
+                                      <div _ngcontent-c4="" class="card card-cascade narrower ">    
+
+                                        <div _ngcontent-c4="" class="card-body text-center">
+                                            <div _ngcontent-c4="" class="avatar">
+                                                <i class="fa fa-user rounded-circle z-depth-1" aria-hidden="true"></i>
+                                            </div>
+                                            <h4 _ngcontent-c4="">{{userData.customer_name}}</h4>
+                                            <h5 _ngcontent-c4="">{{userData.customer_post_code}} {{userData.customer_city}}</h5>
+                                            <h5 _ngcontent-c4="">{{userData.customer_street}}</h5>
+                                            <h5 _ngcontent-c4="">NIP: {{userData.customer_nip}}</h5>
+                                        </div>
+                                        
+                                        <button class="btn btn-outline-primary waves-effect" (click)="edit()">Edytuj swoje dane</button>
+                                        <button class="btn btn-outline-primary waves-effect" (click)="changePsw()">Zmień hasło</button>
+
+                                      </div>
+
+                                  </div>
+
+                            </div>
+                        </section>
+
+
+                    </div>
+                </div>
+                </app-profile3>
+  
+            </div>
+        </div>
+    </div>
+  
+    
+  <!--Main Layout-->
