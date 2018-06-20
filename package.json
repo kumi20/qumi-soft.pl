@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "angular-bootstrap-md": "^5.2.3",
+    "angular-ga": "^1.0.0",
     "angular2-fullcalendar": "^1.0.19",
     "angular2-jwt": "^0.2.3",
     "angular2-tinymce": "^2.1.2",

@@ -13,6 +13,7 @@ import { ApiService } from './api.service';
 import { EventService } from './event.service';
 import { routerModule} from './app.routing';
 import { AuthGuard } from './auth.guard';
+import { GoogleAnalyticsModule, GA_TOKEN } from 'angular-ga';
 
 import { DashboardComponent} from './dashboard/dashboard.component';
 import { DynamicComponentComponent } from './dynamic-component/dynamic-component.component';
@@ -29,7 +30,8 @@ import { EbookComponent } from './ebook/ebook.component';
     EbookComponent,    
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
+	GoogleAnalyticsModule.forRoot(),
     FormsModule,
     HttpModule,
     routerModule,
